@@ -1,0 +1,24 @@
+# Ignore build, install, and log directories
+/build/
+/install/
+/log/
+
+# Ignore temporary or hidden system files
+*.swp
+*.swo
+*.tmp
+*.bak
+*.DS_Store
+
+# Ignore IDE-specific files (e.g., VSCode, JetBrains)
+.vscode/
+.idea/
+
+# Ignore PlatformIO and Arduino IDE-specific files
+.pio/
+.pioenvs/
+*.elf
+*.bin
+
+# Ignore personal environment configuration
+.env
