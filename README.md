@@ -21,4 +21,4 @@ This repository contains the ROS 2 workspace for a water drone, including firmwa
 
 4. Keyboard Teleop (after firmware was installed)
    ```bash
-   rosrun teleop_twist_keyboard teleop_twist_keyboard.py _speed:=1.4 _turn:=1.2
+   ros2 run teleop_twist_keyboard teleop_twist_keyboard _speed:=1.4 _turn:=1.2
