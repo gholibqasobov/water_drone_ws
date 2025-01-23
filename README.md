@@ -10,7 +10,7 @@ This repository contains the ROS 2 workspace for a water drone, including firmwa
 ## Getting Started
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your_username/water_drone_ws.git
+   git clone https://github.com/gholibqasobov/water_drone_ws.git
    cd water_drone_ws
 
 2. Build the workspace:
