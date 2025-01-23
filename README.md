@@ -1,6 +1,6 @@
 # Water Drone Workspace
 
-This repository contains the ROS 2 workspace for a water drone, including firmware for the ESP32 and ROS 2 packages for navigation, control, and system bringup.
+This repository contains the ROS 2 workspace for a water drone, including firmware for the ESP32 and ROS 2 (Humble) packages for navigation, control, and system bringup.
 
 ## Packages
 1. **firmware**: Firmware for the ESP32 microcontroller, enabling motor control via micro-ROS.
