@@ -12,7 +12,7 @@ Servo rightMotor;
 const int LEFT_MOTOR_PIN = 19;
 const int RIGHT_MOTOR_PIN = 18;
 const int MAX_SPEED = 180; // Max speed for ESC
-const int MIN_SPEED = 100;   // Min speed for ESC
+const int MIN_SPEED = 0;   // Min speed for ESC
 
 // ROS variables
 rcl_subscription_t twist_subscriber;
