@@ -13,8 +13,8 @@ This repository contains the ROS 2 workspace for a water drone, including firmwa
    git clone https://github.com/your_username/water_drone_ws.git
    cd water_drone_ws
 
-    Build the workspace:
+2. Build the workspace:
+   ```bash
+   colcon build --symlink-install
 
-colcon build
-
-For firmware instructions, see the firmware README.
+3. For firmware instructions, see the firmware README
