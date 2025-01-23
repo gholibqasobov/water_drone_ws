@@ -1,7 +1,3 @@
-
----
-Include the detailed library and flashing instructions:
-
 # ESP32 Firmware
 
 This package contains the firmware for the ESP32 microcontroller used in the water drone project. The firmware is responsible for motor control via ROS 2 `/cmd_vel` commands using micro-ROS.
