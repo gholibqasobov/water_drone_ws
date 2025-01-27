@@ -1,15 +1,22 @@
 import pyrealsense2 as rs
 import numpy as np
-import cv2
+import cv2, math
 from ultralytics import YOLO
+from timeit import default_timer as timer
+from PIL import Image
+
 
 yolo = YOLO("yolo11n.pt")
 
 
 pipeline = rs.pipeline()
+align_to = rs.stream.color
+
+
+
 config = rs.config()
 config.enable_stream(rs.stream.color, 640, 480, rs.format.rgb8, 30)
-
+config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
 
 def getColours(cls_num):
     base_colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
@@ -20,17 +27,33 @@ def getColours(cls_num):
     return tuple(color)
 
 
+accum_time = 0
+curr_fps = 0
+fps = "FPS: ??"
+
+
+
 try:
-    pipeline.start(config)
+    profile = pipeline.start(config)
+    align = rs.align(align_to)
+
+    intr = profile.get_stream(rs.stream.color).as_video_stream_profile().get_intrinsics()
+
+    prev_timer = timer()
+
+
     print("Camera started. Press 'q' to quit.")
 
     while True:
         # Wait for frames
         frames = pipeline.wait_for_frames()
-        color_frame = frames.get_color_frame()
+        aligned_frames = align.process(frames)
+
+        color_frame = aligned_frames.get_color_frame()
+        depth_frame = aligned_frames.get_depth_frame()
 
         # Convert to numpy array
-        if color_frame:
+        if color_frame or depth_frame:
             color_image = np.asanyarray(color_frame.get_data())
             results = yolo.track(color_image, stream=True)
 
