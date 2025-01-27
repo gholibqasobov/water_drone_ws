@@ -47,6 +47,24 @@ try:
                         # convert to int
                         x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
 
+
+                        """code for pose of detected object"""
+
+                        # confidence score
+                        conf = float(box.conf[0])
+
+                        # center of the bounding box
+                        center_x = (x1 + x2) // 2
+                        center_y = (y1 + y2) // 2
+
+                        
+
+
+
+
+
+
+
                         # get the class
                         cls = int(box.cls[0])
 
