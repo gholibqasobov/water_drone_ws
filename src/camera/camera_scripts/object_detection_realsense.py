@@ -73,3 +73,7 @@ try:
 finally:
     pipeline.stop()
     cv2.destroyAllWindows()
+
+    # I have added this comment and printline in realsense_pose branch
+    print("Hello world")
+    
